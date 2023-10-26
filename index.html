@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>图片水印工具</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+
+  #imageCanvas {
+    border: 1px solid #ddd;
+    max-width: 500px; /* 最大宽度限制 */
+    max-height: 500px; /* 最大高度限制 */
+  }
+
+  div {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+    <h2>图片水印工具</h2>
+    <input type="file" id="imageInput" accept="image/*" />
+    <br>
+    <canvas id="imageCanvas"></canvas>
+    <br>
+    <div>
+        <label>水印文字: <input type="text" id="watermarkText" /></label>
+        <label>颜色: <input type="color" id="watermarkColor" /></label>
+        <label>透明度: <input type="range" id="watermarkOpacity" min="0" max="1" step="0.1" value="1" /></label>
+        <label>倾斜角度: <input type="range" id="watermarkAngle" min="0" max="360" value="0" /></label>
+        <button id="applyWatermark">应用水印</button>
+    </div>
+    <script>
+      const imageInput = document.getElementById('imageInput');
+      const imageCanvas = document.getElementById('imageCanvas');
+      const ctx = imageCanvas.getContext('2d');
+      let uploadedImage = null;
+
+      // 当选择图片时进行处理
+      imageInput.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          const img = new Image();
+          img.onload = function () {
+            const scale = Math.min(500 / img.width, 500 / img.height);
+            const width = img.width * scale;
+            const height = img.height * scale;
+            imageCanvas.width = width;
+            imageCanvas.height = height;
+            ctx.drawImage(img, 0, 0, width, height);
+            uploadedImage = img;
+          }
+          img.src = event.target.result;
+        }
+        reader.readAsDataURL(file);
+      });
+
+      // 应用水印
+      document.getElementById('applyWatermark').addEventListener('click', function () {
+        if (!uploadedImage) return;
+
+        ctx.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
+        const scale = Math.min(500 / uploadedImage.width, 500 / uploadedImage.height);
+        const width = uploadedImage.width * scale;
+        const height = uploadedImage.height * scale;
+        ctx.drawImage(uploadedImage, 0, 0, width, height);
+
+        const text = document.getElementById('watermarkText').value;
+        const color = document.getElementById('watermarkColor').value;
+        const opacity = document.getElementById('watermarkOpacity').value;
+        const angle = document.getElementById('watermarkAngle').value;
+
+        ctx.save();
+
+        ctx.globalAlpha = opacity;
+        ctx.fillStyle = color;
+        ctx.font = "30px Arial";
+        ctx.translate(imageCanvas.width / 2, imageCanvas.height / 2);
+        ctx.rotate(angle * Math.PI / 180);
+
+        // 绘制多行水印
+        const lineHeight = 40; // 行高
+        const lines = text.split('\n'); // 根据换行符分割文本
+        for (let i = 0; i < lines.length; i++) {
+          ctx.fillText(lines[i], -ctx.measureText(lines[i]).width / 2, i * lineHeight);
+        }
+
+        ctx.restore();
+      });
+    </script>
+</body>
+</html>

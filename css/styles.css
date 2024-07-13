@@ -58,23 +58,12 @@
 }
 .form-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 .form-row .form-item {
-    flex: 1;
-    margin-right: 16px;
+    margin-bottom: 16px;
 }
-.form-row .form-item:last-child {
-    margin-right: 0;
-}
-.form-item-space {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-footer {
+.footer {
     background-color: #f8f9fa;
     padding: 20px 0;
     text-align: center;

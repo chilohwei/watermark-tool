@@ -6,7 +6,7 @@
     <title>水印宝 - 专业的在线图片水印工具</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.13/antd.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.13/antd.min.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" ></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link id="favicon" rel="icon" type="image/png" href="assets/favicon.ico">
@@ -35,7 +35,7 @@
         <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 <div class="px-4 py-6 sm:px-0">
-                    <div class="border-4 border-dashed border-gray-200 rounded-lg h-96 mb-4 relative">
+                    <div class="border-4 border-dashed border-gray-200 rounded-lg h-48 md:h-96 mb-4 relative">
                         <div id="dropzone" class="w-full h-full flex items-center justify-center cursor-pointer absolute inset-0">
                             <div class="text-center">
                                 <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
@@ -52,19 +52,19 @@
                     </div>
                     <div class="mt-5 md:mt-0 md:col-span-2">
                         <form class="ant-form ant-form-horizontal ant-form-default form-container">
-                            <div class="form-row">
-                                <div class="form-item">
+                            <div class="form-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div class="form-item col-span-1 lg:col-span-4">
                                     <label for="watermarkText">水印文字</label>
                                     <input type="text" name="watermarkText" id="watermarkText" class="ant-input" value="仅供XXX使用" title="请输入水印文字">
                                 </div>
-                                <div class="form-item">
+                                <div class="form-item col-span-1 lg:col-span-2">
                                     <label for="watermarkColor">水印颜色</label>
                                     <div class="flex items-center">
                                         <input type="color" name="watermarkColor" id="watermarkColor" value="#FFFFFF" class="color-picker" title="选择水印颜色">
                                         <input type="text" name="watermarkColorText" id="watermarkColorText" class="ant-input ml-2" value="#FFFFFF" title="输入水印颜色代码">
                                     </div>
                                 </div>
-                                <div class="form-item">
+                                <div class="form-item col-span-1 lg:col-span-2">
                                     <label for="watermarkStyle">水印样式</label>
                                     <div class="flex items-center">
                                         <div class="mr-4">
@@ -77,30 +77,28 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-item">
+                                <div class="form-item col-span-1 lg:col-span-1">
                                     <label for="watermarkAngle">水印旋转角度</label>
                                     <div class="flex items-center">
                                         <input type="range" name="watermarkAngle" id="watermarkAngle" min="0" max="360" value="335" class="ant-slider" title="调整水印的旋转角度">
                                         <span id="angleValue" class="text-sm text-gray-500">335°</span>
                                     </div>
                                 </div>
-                                <div class="form-item">
+                                <div class="form-item col-span-1 lg:col-span-1">
                                     <label for="watermarkOpacity">水印透明度</label>
                                     <div class="flex items-center">
                                         <input type="range" name="watermarkOpacity" id="watermarkOpacity" min="0" max="1" step="0.1" value="0.2" class="ant-slider" title="调整水印的透明度">
                                         <span id="opacityValue" class="text-sm text-gray-500">0.2</span>
                                     </div>
                                 </div>
-                                <div class="form-item">
+                                <div class="form-item col-span-1 lg:col-span-1">
                                     <label for="watermarkSize">水印字体大小</label>
                                     <div class="flex items-center">
                                         <input type="range" name="watermarkSize" id="watermarkSize" min="10" max="100" value="16" class="ant-slider" title="调整水印的字体大小">
                                         <span id="sizeValue" class="text-sm text-gray-500">16</span>
                                     </div>
                                 </div>
-                                <div class="form-item">
+                                <div class="form-item col-span-1 lg:col-span-1">
                                     <label for="watermarkSpace">水印间距</label>
                                     <div class="flex items-center">
                                         <input type="range" name="watermarkSpace" id="watermarkSpace" min="0" max="100" value="24" class="ant-slider" title="调整水印的间距">
@@ -108,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-buttons px-4 py-3 bg-gray-50 sm:px-6">
+                            <div class="form-buttons px-4 py-3 bg-gray-50 sm:px-6 text-right">
                                 <button type="button" id="applyWatermark" class="ant-btn ant-btn-primary inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     应用水印
                                 </button>

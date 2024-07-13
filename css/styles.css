@@ -1,0 +1,128 @@
+/* Existing styles */
+.ant-input,
+.ant-select,
+.ant-slider {
+    width: 100%;
+}
+.ant-input-number {
+    width: 100%;
+}
+.ant-form-item {
+    margin-bottom: 16px;
+}
+.form-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form-container .form-item {
+    margin-bottom: 16px;
+}
+.form-container .form-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+}
+.form-container .form-item input,
+.form-container .form-item select,
+.form-container .form-item .ant-slider {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+.form-container .form-item .ant-slider {
+    margin-top: 8px;
+}
+.form-container .form-item .flex {
+    align-items: center;
+}
+.form-container .form-item .flex span {
+    margin-left: 8px;
+    color: #a0aec0;
+}
+.form-buttons {
+    text-align: right;
+}
+.form-buttons button {
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.color-picker {
+    border: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+.form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.form-row .form-item {
+    flex: 1;
+    margin-right: 16px;
+}
+.form-row .form-item:last-child {
+    margin-right: 0;
+}
+.form-item-space {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    color: #6c757d;
+}
+.dropzone-info {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6c757d;
+}
+.hidden {
+    display: none;
+}
+.fixed {
+    position: fixed;
+}
+.bottom-4 {
+    bottom: 1rem;
+}
+.right-4 {
+    right: 1rem;
+}
+.shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+#feedback {
+    transition: opacity 0.3s ease-in-out;
+}
+/* New styles for Why Choose Us section */
+.why-choose-us {
+    background-color: #ffffff;
+}
+.why-choose-us .text-center {
+    margin-bottom: 2rem;
+}
+.why-choose-us .flex {
+    display: flex;
+}
+.why-choose-us .flex-grow {
+    flex-grow: 1;
+}
+.why-choose-us .p-4 {
+    padding: 1rem;
+}
+.why-choose-us .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+.why-choose-us .leading-relaxed {
+    line-height: 1.625;
+}

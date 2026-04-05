@@ -31,6 +31,8 @@ npm run dev
 
 支持 **Vercel** 和 **Cloudflare Pages** 双平台部署。
 
+- **Cloudflare Pages（静态）**: [https://watermark-tool-dn3.pages.dev](https://watermark-tool-dn3.pages.dev)
+
 ```bash
 # Vercel（默认）
 npm run build

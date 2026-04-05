@@ -33,17 +33,35 @@ npm run dev
 
 - **Cloudflare Pages（静态）**: [https://watermark-tool-dn3.pages.dev](https://watermark-tool-dn3.pages.dev)
 
+### Cloudflare Pages：连接 Git 自动构建（推荐）
+
+在 Cloudflare Dashboard 里把仓库接上后，**push 到 GitHub 即自动构建发布**，无需本机 `wrangler pages deploy`。
+
+1. 打开 [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → 选中项目（或 **Create** → **Pages** → **Connect to Git**）。
+2. 授权并选择仓库 **`chilohwei/watermark-tool`**，生产分支选 **`main`**。
+3. **构建设置**（Build configuration）：
+   | 项 | 值 |
+   | --- | --- |
+   | Framework preset | **None**（自定义；勿选会改输出的预设） |
+   | Build command | `npm run build:static` |
+   | Build output directory | `out` |
+   | Root directory | `/`（仓库根目录即可） |
+4. **环境变量**（Variables）建议新增：`NODE_VERSION` = `22`（与仓库 `.nvmrc` 一致；Next.js 16 需较新 Node）。
+5. 保存后触发首次部署；之后在 `main` 上的 push 都会自动构建。
+
+说明：`build:static` 已内含 `NEXT_OUTPUT=export`，产物写入 **`out/`**，与 `wrangler.jsonc` 里的 `pages_build_output_dir` 一致。若你仍想偶尔本机直传，可继续用下面的 `npm run deploy:cf`。
+
 ```bash
 # Vercel（默认）
 npm run build
 
-# Cloudflare Pages（静态导出）
+# Cloudflare Pages（静态导出，本地验证）
 npm run build:static
 
-# 部署到 Cloudflare Pages
+# 本机直传到 Cloudflare（不经 Git CI 时使用）
 npm run deploy:cf
 
-# 本地预览 Cloudflare 构建
+# 本地预览静态产物
 npm run preview:cf
 ```
 

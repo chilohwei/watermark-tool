@@ -95,35 +95,9 @@ src/
     └── watermark-store.ts    # Zustand 全局状态
 ```
 
-## 捐赠
+## 捐献
 
-如果这个项目对你有帮助，欢迎请我喝杯咖啡 ☕
-
-👉 [捐赠页面](https://donate.chiloh.com)
-
-### 扫码支付
-
-<table>
-  <tr>
-    <td align="center"><b>微信支付</b></td>
-    <td align="center"><b>支付宝</b></td>
-    <td align="center"><b>PayPal</b></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://donate.chiloh.com/img/wechat.webp" width="200" alt="WeChat Pay" /></td>
-    <td align="center"><img src="https://donate.chiloh.com/img/alipay.webp" width="200" alt="Alipay" /></td>
-    <td align="center"><img src="https://donate.chiloh.com/img/paypal.webp" width="200" alt="PayPal" /></td>
-  </tr>
-</table>
-
-### 加密货币
-
-| 币种 | 网络 | 地址 |
-|------|------|------|
-| **BTC** | Bitcoin SegWit | `bc1qpqchzes0wrhtg5h2rwvh3f6tf5weljetx2adun` |
-| **EVM** | ETH / BSC / Polygon / Arb / OP / Base | `0x797A13aB0398eef748cF6D8C518b0803a14918b1` |
-| **USDT** | TRC-20 (Tron) | `TQeEKzMRvAUXEU5tsiPR1GX8WUHdhKUhwg` |
-| **SOL** | Solana (SOL & USDT SPL) | `GXTtMhJvbpmdrqSz5x65Hzd6wia5YYwaHdnxCB3PC1HY` |
+如果这个项目对你有帮助，欢迎前往 [https://donate.chiloh.com](https://donate.chiloh.com) 捐赠支持。
 
 ## License
 
